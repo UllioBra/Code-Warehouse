@@ -1,0 +1,19 @@
+/*
+The CSS style for cnblogs
+=v=
+*/
+
+/*主体部分CSS*/
+#home {
+	opacity: 0.9;
+}
+
+/*博客名部分CSS*/
+#Header1_HeaderTitle{
+        opacity:1;
+}
+
+/*文章标题*/
+div.postTitle {
+ 	opacity: 1;
+}
