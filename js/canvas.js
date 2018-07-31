@@ -7,7 +7,11 @@
         }
         function t() {
                 var t = e("script"), o = t.length, i = t[o - 1];
-                return { l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", "0,0,0"), n: n(i, "count", 99) }
+                var x1 = Math.floor(Math.random() * 256);
+                var x2 = Math.floor(Math.random() * 256);
+                var x3 = Math.floor(Math.random() * 256);
+                var final = x1 + "," + x2 + "," + x3;
+                return { l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", final), n: n(i, "count", 99) }
         }
         function o() {
                 a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
