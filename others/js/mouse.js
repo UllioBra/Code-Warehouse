@@ -1,20 +1,18 @@
-function getColor() {
-    var colorElements = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f";
-    var colorArray = colorElements.split(",");
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-        color += colorArray[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
 onload = function () {
-    var click_cnt = 0;
+    function A__getColor() {
+        var colorElements = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f";
+        var colorArray = colorElements.split(",");
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += colorArray[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
     var $html = document.getElementsByTagName("html")[0];
     var $body = document.getElementsByTagName("body")[0];
     $html.onclick = function (e) {
         var $elem = document.createElement("b");
-        $elem.style.color = getColor();
+        $elem.style.color = A__getColor();
         $elem.style.zIndex = 9999;
         $elem.style.position = "absolute";
         $elem.style.select = "none";
