@@ -5,4 +5,5 @@ read miss
 while true; do
 ./$miss
 read tmp
+clear
 done
