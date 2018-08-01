@@ -12,6 +12,7 @@
 !*.htm
 !*.js*
 !*.txt
+!*.sh
 
 /duipai/pre/
 /duipai/history of duipai/
