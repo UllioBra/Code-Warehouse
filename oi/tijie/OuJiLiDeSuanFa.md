@@ -51,10 +51,11 @@ $ax + by = \gcd \left(a, b\right)$。
  (引自wikipidia)
 
 ## 实现&证明(求解和证明$ax+by=\gcd \left( a,b\right)$)
-**(注意接下来的除法,均为舍去小数点后的整除)**   
-对于 $a\%b$ ,我们可以用$a-\left( a/b\right) \ast c$ 去替代   
-那么考虑gcd中的一步 $\gcd \left( m,n\right)$ 和下一步 $\gcd \left( n,m\%n\right)$    
-假设有$nx+\left( n\% m\right) y= \gcd \left( m,n\right)$    
+
+**(注意接下来的除法,均为舍去小数点后的整除)**  
+对于 $a\%b$ ,我们可以用$a-\left( a/b\right) \ast c$ 去替代  
+那么考虑gcd中的一步 $\gcd \left( m,n\right)$ 和下一步 $\gcd \left( n,m\%n\right)$  
+假设有$nx+\left( n\% m\right) y= \gcd \left( m,n\right)$  
 请思考上述方程与 $ mx_{1} + ny_{1} = \gcd \left( m , n \right) $ 之间的关系  
 ...........................................    
 $\because a\%b = a - \left( a / b \right) \ast b$   
@@ -84,9 +85,9 @@ int exGCD(int a,int b,int&x,int&y) {
 	x=x1;
 }
 ```
-## 之后
+# 之后
 ###### ~~这里就是各种乱搞的地方啦~~
-### 1.证明当 $ a_{i} $ 和 $ x_{i} $ 均为整数时, $ a_{1}x_{1} + a_{2}x_{2} + \ldots +a_{n}x_{n} $的值一定为 $ \gcd \left( a_{1},a_{2}, \ldots ,a_{n} \right)$的整数倍
+## 1.证明当 $ a_{i} $ 和 $ x_{i} $ 均为整数时, $ a_{1}x_{1} + a_{2}x_{2} + \ldots +a_{n}x_{n} $的值一定为 $ \gcd \left( a_{1},a_{2}, \ldots ,a_{n} \right)$的整数倍
 假设 $ a_{1}x_{1} + a_{2}x_{2} + \ldots +a_{n}x_{n} = \varphi $   且 $ \varphi $ 不为$ \gcd \left( a_{1},a_{2}, \ldots ,a_{n} \right)$的整数倍  
 对上式两边同除以 $ \gcd \left( a_{1},a_{2}, \ldots ,a_{n} \right)$ ,显然左边为一个整数   
 又因为右边不为一个整数,与等式矛盾   

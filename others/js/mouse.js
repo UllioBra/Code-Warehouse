@@ -1,5 +1,6 @@
 onload = function () {
-    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) break;
+    var a=1;
+    if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|wOSBrowser|BrowserNG|WebOS)/i))return;
     function A__getColor() {
         var colorElements = "0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f";
         var colorArray = colorElements.split(",");
