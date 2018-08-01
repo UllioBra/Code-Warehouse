@@ -1,4 +1,5 @@
 !function () {
+        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))break;
         function n(n, e, t) {
                 return n.getAttribute(e) || t
         }
