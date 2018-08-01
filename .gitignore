@@ -1,7 +1,6 @@
 *
 
 !/**/**/
-
 !*.cpp
 !*.c
 !*.h
@@ -13,5 +12,8 @@
 !*.htm
 !*.js*
 !*.txt
+
+/duipai/pre/
+/duipai/history of duipai/
 .vscode/
 tmp.*
