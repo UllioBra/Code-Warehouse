@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux"
+        }
+    ],
+    "includePath": [
+        "${workspaceFolder}"
+    ],
+    "defines": [
+        "_DEBUG",
+        "UNICODE"
+    ],
+    "browse": {
+        "path": [
+            "${workspaceFolder}"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+    },
+    "compilerPath": "/usr/bin/clang++",
+    "version": 4
+}
