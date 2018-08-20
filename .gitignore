@@ -1,19 +1,8 @@
 *
 
-!/**/**/
-!*.cpp
-!*.c
-!*.h
-!*.md
-!*.py
-!*.css
-!*.js
-!*.html
-!*.htm
-!*.js*
-!*.txt
-!*.sh
+!/oi/*
+/oi/duipai/pre/
 
-/duipai/pre/
-/duipai/history of duipai/
-tmp.*
+!/others/*
+!/settings/*
+.vscode/tasks.json
