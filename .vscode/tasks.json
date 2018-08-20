@@ -8,7 +8,7 @@
                         "type": "shell",
                         "command": "clang++",
                         "args": [
-                                "-g","${file}","-o","${fileDirname}/${fileBasenameNoExtension",
+                                "-g","${file}","-o","${fileDirname}/${fileBasenameNoExtension}","&&","${fileBasenameNoExtension}.exe"
                         ],
                         "group": {
                                 "kind": "build",
