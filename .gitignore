@@ -1,7 +1,5 @@
-*
+/*
+!.gitignore
 
-!/oi/*
+!/oi/
 /oi/duipai/pre/
-
-!/others/*
-!/settings/*
