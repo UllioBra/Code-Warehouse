@@ -4,11 +4,11 @@
         "version": "2.0.0",
         "tasks": [
                 {
-                        "label": "Singal Cpp",
+                        "label": "Single CPP",
                         "type": "shell",
                         "command": "clang++",
                         "args": [
-                                "-g","${file}","-o","${fileDirname}/${fileBasenameNoExtension}","&&","${fileBasenameNoExtension}.exe"
+                                "-g","${file}","-o","${fileDirname}\\${fileBasenameNoExtension}.exe",
                         ],
                         "group": {
                                 "kind": "build",
