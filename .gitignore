@@ -2,10 +2,12 @@
 !.gitignore
 
 !/oi/
-/oi/duipai/pre/
+/oi/duipai/pre/*
+/oi/sch/*
 
-!/others/
+/duipai/pre/*
 
-!/settings/
-
+tmp.*
+test.*
+*.out
 .vscode/*
