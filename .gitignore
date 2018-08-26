@@ -1,5 +1,8 @@
 
 !.gitignore
+!1.sh
+!LICENSE
+!README.md
 
 !/oi/*
 !/oi/duipai/*
