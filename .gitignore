@@ -4,6 +4,10 @@
 !LICENSE
 !README.md
 
+.vscode/*
+
+.vs/*
+
 !/oi/*
 !/oi/duipai/*
 !/oi/duipai/python/*
@@ -18,4 +22,4 @@ tmp.*
 test.*
 *.out
 *.in
-.vscode/*
+*.exe
