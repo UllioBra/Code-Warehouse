@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#./pre/by.sh
-
 # subl pre/juruo.cpp
 # subl pre/std.cpp
 # clang++ ./pre/juruo.cpp -o  juruo

@@ -2,10 +2,11 @@
 !.gitignore
 
 !/oi/
-/oi/duipai/pre/
+/oi/duipai/pre/*
+/oi/sch/*
 
-/duipai/pre/
-/duipai/history of duipai/
+/duipai/pre/*
+
 tmp.*
 test.*
 *.out

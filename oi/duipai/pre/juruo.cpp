@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <cmath>
 #include <queue>
+<<<<<<< HEAD
 #include <stack>
 #include <list>
 #include <set>
@@ -45,5 +46,20 @@ int main()
     {
         cout << k[i] << endl;
     }
+=======
+#include <list>
+#include <map>
+#include <set>
+#define ll long long
+#define ull unsigned long long
+#define io_F std::ios::sync_with_stdio(false)
+using namespace std;
+ 
+int n;
+ 
+int main () {
+    cin >> n;
+    cout << n;
+>>>>>>> d29182f3a7e45bace2726452a00eda0482650e7d
     return 0;
 }

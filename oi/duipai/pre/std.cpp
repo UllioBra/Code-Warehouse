@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <cstring>
 #include <iostream>
@@ -50,4 +51,26 @@ int main()
         ans = max(ans, s[dp[i][0]] + s[dp[i][1]]);
         printf("%d\n", ans);
     }
+=======
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <cmath>
+#include <queue>
+#include <list>
+#include <map>
+#include <set>
+#define ll long long
+#define ull unsigned long long
+#define io_F std::ios::sync_with_stdio(false)
+using namespace std;
+ 
+int n;
+ 
+int main () {
+    cin >> n;
+    cout << n;
+    return 0;
+>>>>>>> d29182f3a7e45bace2726452a00eda0482650e7d
 }
