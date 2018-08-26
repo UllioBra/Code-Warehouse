@@ -2,8 +2,6 @@
 
 # subl pre/juruo.cpp
 # subl pre/std.cpp
-# clang++ ./pre/juruo.cpp -o  juruo
-# clang++ ./pre/std.cpp -o std
 
 echo -n "Please input your makefile name in 'c++' dir : "
 read make
@@ -12,6 +10,9 @@ if find -name $make;then echo "Test start"
 else echo "Please check your makefile"
 	exit 0
 fi
+
+clang++ ./pre/juruo.cpp -o  ./pre/juruo
+clang++ ./pre/std.cpp -o ./pre/std
 
 while true; do
 ./c++/$make>tmp.in

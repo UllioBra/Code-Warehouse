@@ -1,11 +1,15 @@
 *
 !.gitignore
 
-!/oi/
+!/oi/*
+!/oi/duipai/*
+!/oi/duipai/python/*
 /oi/duipai/pre/*
 /oi/sch/*
 
-/duipai/pre/*
+!/others/*
+
+!*.py
 
 tmp.*
 test.*
