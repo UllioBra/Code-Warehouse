@@ -11,6 +11,8 @@
 !/oi/*
 !/oi/duipai/*
 !/oi/duipai/python/*
+/oi/duipai/c++/*
+!/oi/duipai/c++/*.cpp
 /oi/duipai/pre/*
 /oi/sch/*
 
