@@ -4,22 +4,7 @@
 !LICENSE
 !README.md
 
-<<<<<<< HEAD
 /oi/luogu/*
-=======
-.vscode/*
-
-.vs/*
-
-
-!/oi/*
-!/oi/duipai/*
-!/oi/duipai/python/*
-
-/oi/duipai/c++/*
-!/oi/duipai/c++/*.cpp
-
->>>>>>> 87b0c34da4843180d8eb796f1c9e30bcf72f8d7b
 /oi/duipai/pre/*
 /oi/sch/*
 
@@ -35,10 +20,6 @@ tmp.*
 test.*
 *.out
 *.in
-<<<<<<< HEAD
 .vscode/*
 /oi/duipai/pre/juruo.cpp
 /oi/duipai/pre/std.cpp
-=======
-*.exe
->>>>>>> 87b0c34da4843180d8eb796f1c9e30bcf72f8d7b
