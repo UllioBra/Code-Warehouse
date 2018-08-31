@@ -4,18 +4,21 @@
 !LICENSE
 !README.md
 
-!/oi/*
-!/oi/duipai/*
-!/oi/duipai/python/*
+/oi/luogu/*
 /oi/duipai/pre/*
 /oi/sch/*
 
 !/others/*
 
 !*.py
+!*.c*
+!*.js*
+!*.css
 
 tmp.*
 test.*
 *.out
 *.in
 .vscode/*
+/oi/duipai/pre/juruo.cpp
+/oi/duipai/pre/std.cpp
