@@ -22,5 +22,7 @@ test.*
 *.out
 *.in
 .vscode/*
+.vs/*
+*.exe
 /oi/duipai/pre/juruo.cpp
 /oi/duipai/pre/std.cpp
