@@ -21,7 +21,7 @@ def Mat_Mul(x, y, lex, ley):
 def Fib(n):
     # Fibonacci sequence calculation
     """
-        n : "The value of the N-th term of the Fibonacci sequence" ,
+        n : "The N-th term of the Fibonacci sequence" ,
 
     """
     if n <= 2:
