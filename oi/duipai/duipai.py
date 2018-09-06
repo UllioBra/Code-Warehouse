@@ -16,17 +16,17 @@ else :
 os.system("clang++ ./pre/juruo.cpp -o  ./pre/juruo")
 os.system("clang++ ./pre/std.cpp -o ./pre/std")
 
-mx = 100
+mx = 1000
 cnt = 0
 print ("Test start :")
 
 while cnt < mx :
     os.system("python3 %s > tmp.in" %path)
-    Time_A = time.clock()
+    # Time_A = time.clock()
     os.system("./pre/juruo < tmp.in > juruo.out")
-    Time_B = time.clock()
+    # Time_B = time.clock()
     os.system("./pre/std < tmp.in > std.out")
-    Time_C = time.clock()
+    # Time_C = time.clock()
     cnt = cnt + 1
     print ("The %d / %d group" %(cnt,mx))
     if filecmp.cmp("juruo.out","std.out") :
@@ -37,10 +37,10 @@ while cnt < mx :
     # print (Time_A)
     # print (Time_B)
     # print (Time_C)
-    A = Time_B-Time_A
-    B = Time_C-Time_B
-    print ("Time for juruo : %f " %A)
-    print ("Time for std : %f \n" %B)
+    # A = Time_B-Time_A
+    # B = Time_C-Time_B
+    # print ("Time for juruo : %f " %A)
+    # print ("Time for std : %f \n" %B)
 
 if cnt == mx :
     print ("You pass the test , but check out carefully!")
