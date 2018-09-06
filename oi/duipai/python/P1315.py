@@ -1,7 +1,7 @@
 from cyaron import *
 n = randint(2, 1000)
 m = randint(1, 10000)
-k = randint(1, 10000)
+k = randint(1, 100000)
 print(n, m, k)
 for i in range(1, n):
     print(randint(0, 1000))
