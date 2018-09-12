@@ -1,3 +1,4 @@
+
 def Mat_Mul(x, y, lex, ley):
     # Matrix multiplication
     """
@@ -33,6 +34,11 @@ def Fib(n):
         if n & 1:
             ans = Mat_Mul(ans, b, [2, 2], [2, 2])
         b = Mat_Mul(b, b, [2, 2], [2, 2])
-        b <<= 1
+        n >>= 1
 
     return ans[0][1]
+
+def Euler(n):
+    '''
+        n : "The value of the Nth term of the Euler function" ,
+    '''

@@ -8,7 +8,7 @@ tim = int(input("Please input the timelimits for the app (ms):")) / 1000
 path = os.path.abspath('.') + '/python/' + name + ".py"
 # print (path)
 
-if os.path.isfile(path) :
+if os.path.isfile(path):
     pass
 else : 
     print("No file")
@@ -49,8 +49,7 @@ while cnt < mx :
     # print (Time_B)
     # print (Time_C)
     print ("Time for juruo : %f " %A)
-    print ("Time for std : %f " %B)
-    print("\n")
+    print ("Time for std : %f \n" %B)
 
 if cnt == mx :
     print ("You pass the test , but check out carefully !")
