@@ -35,7 +35,7 @@ while cnt < mx :
     A = Time_B-Time_A
     B = Time_C-Time_B
     if A > tim or B > tim :
-        print("TLE")
+        print ("TLE")
         print ("Time for juruo : %f " %A)
         print ("Time for std : %f " %B)
         break
