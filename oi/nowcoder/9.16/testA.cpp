@@ -17,7 +17,7 @@
 using namespace std;
 
 int n;
-int arr[10000];
+bool book[1<<18];
 
 inline int get (int x) {
     

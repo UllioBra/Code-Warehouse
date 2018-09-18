@@ -18,11 +18,11 @@ using namespace std;
 
 int n, m, k;
 int arr[10010];
+bool book[1<<19];
 
-inline void print (int x) {
-    for (int i = 0; i < (1<<n); i++)
-        if(x & (1<<i)) cout << 1;
-        else cout << 0;
+inline void print () {
+    for (int i = 1; i <= (1 << n) - 1; i++)
+        cout << book[i];
 }
 
 int main() {
@@ -30,12 +30,20 @@ int main() {
     int ans = 0;
     for (int i = 1; i <= m; i++) {
         cin >> arr[i];
-        ans |= 1 << (arr[i]-1);
+        book[arr[i]] = 1;
     }
 
     if (m == 0) {
-        for (int i = 0; i < k; i++) ans |= (1<<i);
-        print(ans);
+        int i = (1 << n) - 1 ;
+        int sum = 0;
+        while(sum < k) {
+            if (!book[i]) {
+                sum++;
+                book[i] = 1;
+            }
+            i--;
+        }
+        print();
         return 0;
     }
 
@@ -44,32 +52,39 @@ int main() {
             cout << -1 << endl;
             return 0;
         }
-        if (arr[m] >= k) k--;
-        for (int i = 0; i < k; i++) ans |= (1<<i);
-        print(ans);
+        int i = (1 << n) - 1 ;
+        int sum = m;
+        while(sum < k) {
+            if (!book[i]) {
+                sum++;
+                book[i] = 1;
+            }
+            i--;
+        }
+        print();
         return 0;
     }
-
-    for (int i = 18; i >= 0; i--)
-        for (int j = i - 1; j >= 0; j--)
-            ans |= (i & j);
+    
+    for (int i = 1; i <= (1 << n) - 1; i++)
+        for (int j = i + 1; j <= (1 << n) - 1; j++)
+            if (book[i] && book[j]) book[i|j] = 1;
 
     int sum = 0;
-    for (int i = 0; i <= 18; i++)
-        if(ans & (1<<i)) sum++;
+    for (int i = 1; i <= (1 << n) - 1; i++)
+        if (book[i]) sum++;
     
     if (sum > k) {
         cout << -1 << endl;
         return 0;
     }
-    int l = 0;
-    while (sum < k) {
-        if (!(ans & (1<<l))) {
+    int i = (1 << n) - 1 ;
+    while(sum < k) {
+        if (!book[i]) {
             sum++;
-            ans |= (1<<l);
+            book[i] = 1;
         }
+        i--;
     }
-    print(ans);
-
+    print();
     return 0;
 }
