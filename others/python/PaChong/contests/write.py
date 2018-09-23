@@ -7,12 +7,12 @@ print("<meta http-equiv=\"Content-Type\" content=\"text/html\"; charset=\"utf-8\
 
 
 print("<head>")
-
+print("<title>ContestsGet</title>")
 print("</head>")
 
 
 print("<body>")
-print("<b>上次更新时间</b>:<b>%s</b>\n<hr>" % (tim))
+print("<b>上次更新时间</b>:<b>%s</b> (如发现挂掉请Q1019641963谢谢^_^)\n<hr>" % (tim))
 
 print("<h1>Atcoder</h1>")
 li_1 = Atcoder_Upcoming_Contests()
