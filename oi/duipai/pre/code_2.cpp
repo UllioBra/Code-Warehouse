@@ -16,11 +16,14 @@
 #define io_f std::ios::sync_with_stdio(false)
 using namespace std;
 
-int n;
+bool mp[5005][5005];
+int n, m;
+int ans;
+int brr[5050];
+
 
 int main()
 {
-    cin >> n;
-    cout << n % 6 << ' ' << n - (n % 6);
+    cout << 'a';
     return 0;
 }
