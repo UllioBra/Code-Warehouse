@@ -1,6 +1,6 @@
 import os
 import re
-import sys
+import sys, time
 
 import requests
 import urllib.request
@@ -27,18 +27,17 @@ def Codeforces_Upcoming_Contests():
     '''
         Get the upcoming contests of Codeforces
     '''
-    tar = "http://codeforces.com/contests?complete=true"
+    tar = "http://codeforces.com/api/contest.list"
     req = requests.get(tar)
-    tx = req.text
-    bf = BeautifulSoup(tx, features = 'html.parser')
-    body = bf.find_all(lambda tag: tag.name == 'tr' and len(tag.attrs) == 1)
+    false = False
+    tx = eval(req.text)
     list_ = []
-    for i in body:
-        li = i.td.find_all(True)
-        if not li:
-            tim = i.find('span', class_="format-time").get_text(strip=True)
-            le_li = i.find_all(lambda tag: tag.name == 'td' and len(tag.attrs) == 0)
-            list_.append([i.td.get_text(strip=True), tim, le_li[2].get_text(strip=True)])
+    if tx['status'] == 'OK':
+        for i in tx['result']:
+            if i['phase'] == 'BEFORE':
+                tim_1 = time.asctime(time.localtime(i['startTimeSeconds']))
+                tim_2 = time.asctime(time.localtime(i['startTimeSeconds'] + i['durationSeconds']))
+                list_.append([i['name'], tim_1, tim_2])
     return list_
 
 def Luogu_Upcoming_Contests():
@@ -83,15 +82,7 @@ def Nowcoder_Upcoming_Contests():
 
 
 if __name__ == '__main__':
-    Nowcoder_Upcoming_Contests()
+    # Atcoder_Upcoming_Contests()
+    Codeforces_Upcoming_Contests()
     # Luogu_Upcoming_Contests()
-    # li1 = Atcoder_Upcoming_Contests()
-    # li2 = Codeforces_Upcoming_Contests()
-
-    # print("Atcoder Contests")
-    # for i in li1:
-    #     print(i)
-
-    # print("\nCodeforce Contests")
-    # for i in li2:
-    #     print(i)
+    # Nowcoder_Upcoming_Contests()
