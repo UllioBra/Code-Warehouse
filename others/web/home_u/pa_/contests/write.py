@@ -11,9 +11,9 @@ print("<head>")
 print('''
 <meta charset="utf-8">
 <title>ContestsGet</title>
-<link rel="stylesheet" href="1.css">
-<script src="2.js"></script>
-<script src="3.js"></script>
+<link rel="stylesheet" href="/ware/1.css">
+<script src="/ware/2.js"></script>
+<script src="/ware/3.js"></script>
 ''')
 print("</head>")
 
