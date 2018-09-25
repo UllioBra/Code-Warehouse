@@ -25,4 +25,3 @@ test.*
 .vscode/*
 .vs/*
 *.exe
-!/oi/duipai/file/*

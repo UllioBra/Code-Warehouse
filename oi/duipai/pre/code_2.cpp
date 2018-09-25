@@ -1,3 +1,4 @@
+// luogu-judger-enable-o2
 #include <algorithm>
 #include <iostream>
 #include <cstring>
@@ -16,11 +17,25 @@
 #define io_f std::ios::sync_with_stdio(false)
 using namespace std;
 
-int n;
+ull n = 1;
+ull m, k;
+ull ans;
 
 int main()
 {
-    cin >> n;
-    cout << n % 6 << ' ' << n - (n % 6);
+    cin >> k >> m;
+    k %= m;
+    ull sum = 1;
+    ull last = 1;
+    int n = 1;
+    while (sum < k || (sum - k) % m != 0)
+    {
+        sum %= m;
+        last = (last * 10) % m;
+        sum += last;
+        n++;
+        // cout << n << ' ' << last << ' ' << sum << endl;
+    }
+    cout << n;
     return 0;
 }
