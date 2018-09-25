@@ -17,6 +17,7 @@
 #define io_f std::ios::sync_with_stdio(false)
 using namespace std;
 
+<<<<<<< HEAD
 ull n = 1;
 ull m, k;
 ull ans;
@@ -37,5 +38,16 @@ int main()
         // cout << n << ' ' << last << ' ' << sum << endl;
     }
     cout << n;
+=======
+bool mp[5005][5005];
+int n, m;
+int ans;
+int brr[5050];
+
+
+int main()
+{
+    cout << 'a';
+>>>>>>> 3bd4892c97b8dd51503eb33a3d7168749bd234b9
     return 0;
 }

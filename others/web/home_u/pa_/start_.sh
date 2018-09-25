@@ -1,0 +1,2 @@
+python3 /www/wwwroot/home_u/pa_/contests/write.py > /www/wwwroot/home_u/pa_/contests/contests.html
+python3 /www/wwwroot/home_u/pa_/LuogudailyBao/write.py > /www/wwwroot/home_u/pa_/LuogudailyBao/bao.html

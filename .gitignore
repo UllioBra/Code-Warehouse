@@ -24,4 +24,8 @@ test.*
 *.in
 .vscode/*
 .vs/*
+<<<<<<< HEAD
 *.exe
+=======
+*.exe
+>>>>>>> 3bd4892c97b8dd51503eb33a3d7168749bd234b9

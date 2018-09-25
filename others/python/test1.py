@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 import sys
 from random import randint
@@ -6,13 +7,17 @@ from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import (QApplication, QLineEdit, QMessageBox, QPushButton,
                              QToolTip, QWidget)
+=======
+from flask import Flask
+app = Flask(__name__)
+>>>>>>> 3bd4892c97b8dd51503eb33a3d7168749bd234b9
 
 
-class test (QWidget):
-    
-    def __init__ (self):
-        super().__init__()
+@app.route('/')
+def hello_world():
+        return 'Hello World!'
 
+<<<<<<< HEAD
         self.initUI()
         self.num =  19260817
 
@@ -61,3 +66,8 @@ app = QApplication(sys.argv)
 ex = test();
 
 sys.exit(app.exec_())
+=======
+
+if __name__ == '__main__':
+        app.run()
+>>>>>>> 3bd4892c97b8dd51503eb33a3d7168749bd234b9
