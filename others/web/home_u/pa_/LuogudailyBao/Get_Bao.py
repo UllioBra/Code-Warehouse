@@ -11,15 +11,16 @@ def func():
     tar = requests.get(url, headers = hed)
     tx = tar.text
     bf = BeautifulSoup(tx, features='html.parser')
-    body = bf.find('div', class_='am-comment-bd')
-    part = body.find_all('p')
+    body = bf.find_all('div', class_='am-comment-bd')
     list_ = []
-    for i in part:
-        if i.strong:
-            if i.a:
-                list_.append([True, i.strong, i.a.text])
-            else:
-                list_.append([False, i.strong])
+    for j in body:
+        part = j.find_all('p')
+        for i in part:
+            if i.strong:
+                if i.a:
+                    list_.append([True, i.strong, i.a.text])
+                else:
+                    list_.append([False, i.strong])
     # print(list_)
     return list_
 
