@@ -10,10 +10,13 @@ def init():
 
     Check_Make_Path(path + '/make/python/' + name + ".py")
 
+    tim = 1000000
     spj = int(input("Enable special judge ( 1 -> YES , 0 -> NO) :"))
-    tim = int(input("Please input the timelimits for the app (ms):")) / 1000
+    switch = int(input("Enable timelimites ( 1 -> YES , 0 -> NO) :"))
+    if switch:
+        tim = int(input("Please input the timelimits for the app (ms):")) / 1000
     # print (path)
-    return spj, name, tim, path
+    return spj, name, tim, path, switch
 
 
 def Check_Make_Path(path):
@@ -58,7 +61,7 @@ def compair(st):
         return filecmp.cmp("./file/code_1.out", "./file/code_2.out")
 
 #--------------------------------------------------------------#
-spj, name, tim, path = init()
+spj, name, tim, path, switch = init()
 spjname = 0
 
 
@@ -79,33 +82,39 @@ print("Test start :")
 
 while cnt < mx:
     os.system("python3 %s > ./file/tmp.in" % (path + '/make/python/' + name + ".py"))
-    Time_A = time.time()
+    if switch:
+        Time_A = time.time()
     os.system("./pre/code_1 < ./file/tmp.in > ./file/code_1.out")
-    Time_B = time.time()
+    if switch:
+        Time_B = time.time()
     os.system("./pre/code_2 < ./file/tmp.in > ./file/code_2.out")
-    Time_C = time.time()
+    if switch:
+        Time_C = time.time()
     cnt = cnt + 1
 
     print("The %d / %d group" % (cnt, mx))
-
-    A = Time_B-Time_A
-    B = Time_C-Time_B
-    if A > tim or B > tim:
-        print("TLE")
-        print("Time for code_1 : %f " % A)
-        print("Time for code_2 : %f " % B)
-        break
+    if switch:
+        A = Time_B-Time_A
+        B = Time_C-Time_B
+        if A > tim or B > tim:
+            print("TLE")
+            print("Time for code_1 : %f " % A)
+            print("Time for code_2 : %f " % B)
+            break
 
     if compair(spj):
         print("AC")
     else:
         print("WA")
         break
+    if not switch:
+        print('')
     # print (Time_A)
     # print (Time_B)
     # print (Time_C)
-    print("Time for code_1 : %f " % A)
-    print("Time for code_2 : %f \n" % B)
+    if switch:
+        print("Time for code_1 : %f " % A)
+        print("Time for code_2 : %f \n" % B)
 
 
 if cnt == mx:
