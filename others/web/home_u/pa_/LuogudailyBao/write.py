@@ -14,6 +14,21 @@ print('''
 <link rel="stylesheet" href="/ware/1.css">
 <script src="/ware/2.js"></script>
 <script src="/ware/3.js"></script>
+
+<style type="text/css">
+    div.panel-default {
+        /*
+        background-color:bisque;
+        background-image: url(./ware/pic/1.jpg);
+        background-position:center;
+        background-repeat: repeat-y;
+        background-size: cover;
+        */
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+</style>
+
 ''')
 print("</head>")
 
