@@ -10,9 +10,9 @@
 #include <map>
 #define ll long long
 #define ull unsigned long long
-#define ci const int&
-#define cl const long long&
-#define cul const unsigned long long&
+#define ci const int &
+#define cl const long long &
+#define cul const unsigned long long &
 #define io_f std::ios::sync_with_stdio(false)
 using namespace std;
 
@@ -21,62 +21,78 @@ int n;
 int arr[50500];
 int idx[50500];
 
-struct stu {
+struct stu
+{
     int le, sum;
-    stu() {
+    stu()
+    {
         le = 0;
         sum = 0;
     }
+    void Max(const stu &a)
+    {
+        if (le < a.le)
+        {
+            le = a.le;
+            sum = a.sum;
+        }
+        else if (le == a.le)
+        {
+            if ((sum += a.sum) >= mod)
+                sum -= mod;
+        }
+    }
 } brr[50500];
 
-inline bool cmp (ci idx, ci idy) {
+inline bool cmp(ci idx, ci idy)
+{
     return arr[idx] == arr[idy] ? idx > idy : arr[idx] < arr[idy];
 }
 
-void Max(stu & a, stu b) {
-    if (a.le < b.le) a = b;
-    else if (a.le == b.le) {
-        if ((a.sum += b.sum) >= mod) {
-            a.sum -= mod;
-        }
-    }
-}
-
-void cdq(ci l, ci r) {
-    if (l == r) return;
+void cdq(ci l, ci r)
+{
+    if (l == r)
+        return;
     int mid = (l + r) >> 1;
     cdq(l, mid);
-    for (int i = l; i <= r; i++) {
+    for (int i = l; i <= r; i++)
+    {
         idx[i] = i;
     }
     sort(idx + l, idx + r + 1, cmp);
-    
+
     stu mx;
 
-    for (int i = l; i <= r; i++) {
-        int id = idx[i];
-        if (id <= mid) {
-            Max(mx, brr[id]);
-        } else {
+    for (int i = l; i <= r; i++)
+    {
+        if (idx[i] <= mid)
+        {
+            mx.Max(brr[idx[i]]);
+        }
+        else
+        {
             stu tmp = mx;
             tmp.le++;
-            Max(brr[id], tmp);
+            brr[idx[i]].Max(tmp);
         }
     }
-    cdq(mid+1 , r);
+    cdq(mid + 1, r);
 }
 
-int main() {
+int main()
+{
     cin >> n;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i++)
+    {
         brr[i].le = 1;
         brr[i].sum = 1;
         cin >> arr[i];
     }
     cdq(1, n);
     stu ans;
-    for (int i = 1; i <= n; i++) {
-        Max(ans, brr[i]);
+    for (int i = 1; i <= n; i++)
+    {
+        ans.Max(brr[i]);
     }
     cout << ans.sum << endl;
     return 0;
