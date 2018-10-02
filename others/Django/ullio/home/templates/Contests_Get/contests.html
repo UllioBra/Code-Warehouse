@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>ContestsGet</title>
+    <link rel="stylesheet" href="/ware/1.css">
+    <script src="/ware/2.js"></script>
+    <script src="/ware/3.js"></script>
+
+    <style type="text/css">
+        div.panel-default {
+            /*
+        background-color:bisque;
+        background-image: url(./ware/pic/1.jpg);
+        background-position:center;
+        background-repeat: repeat-y;
+        background-size: cover;
+        */
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <b>上次更新时间</b>:<b>Sun Sep 30 16:44:36 2018</b> (如发现挂掉请Q1019641963谢谢^_^)
+    <hr>
+    {% for i,j in dict_.items %}
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <b>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                {{ i }}
+                            </a>
+                        </b>
+                    </h4>
+                </div>
+
+
+                <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        
+                        {% for k in j %}
+                            {{k}}
+                        {% endfor %}
+                        <b>比赛</b>:AtCoder Beginner Contest 112
+                        <b>时间</b>:2018/10/06 21:00
+                        <b>时长</b>:01:40
+                        <hr>
+                        <b>比赛</b>:AtCoder Grand Contest 028
+                        <b>时间</b>:2018/10/13 21:00
+                        <b>时长</b>:01:50
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+            <br></br>
+        </div>
+    {% endfor %}
+</body>
+
+</html>
