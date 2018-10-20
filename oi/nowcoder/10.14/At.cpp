@@ -1,9 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cstring>
-#include <cstdlib>
 #include <cstdio>
-#include <ctime>
 #include <cmath>
 #include <queue>
 #include <stack>
@@ -18,18 +16,18 @@
 #define io_f std::ios::sync_with_stdio(false)
 using namespace std;
 
-
+const int mod =  998244353 ;
+ll l1, r1, l2, r2, m;
 
 int main() {
-    srand(time(NULL));
-    srand(rand());
-    int n = rand()%1001;
-    cout<<n<<endl;
-    int cnt = 1;
-    for (int i = 1;i <= n;i++)
-    {
-        srand(time(NULL)*(++cnt)*cnt|19260817);
-        cout<<rand()%100<<endl;
-    }
+    cin >> l1 >> r1 >> l2 >> r2 >> m;
+    ll ans = 0;
+    for(ll i = l1; i <= r1; i++)
+        for (ll j = l2; j <= r2; j++)
+            if (!((i^j)%m)) {
+                ans++;
+                if (ans >= mod) ans -= mod;
+            }
+    cout << ans << endl;
     return 0;
 }
