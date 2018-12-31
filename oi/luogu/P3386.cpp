@@ -12,6 +12,7 @@
  
 using namespace std;
 
+<<<<<<< HEAD
 const int s = 2001,t = 2002;
 const int bs = 1000;
 const int mx_n = 2010;
@@ -23,10 +24,23 @@ int dis[mx_n];
 inline void add(const int&f,const int&t,const int&co) {
    nx[cnt] = h[f]; h[f] = cnt; to[cnt] = t; w[cnt++] = co;
    nx[cnt] = h[t]; h[t] = cnt; to[cnt] = f; w[cnt++] = co;
+=======
+const int bs = 1000;
+const int mx_n = 20000;
+const int mx_e = 2000000;
+int h[mx_n],nx[mx_e],to[mx_e],cnt;
+bool vis[20020];
+int bel[20020];
+ 
+inline void add(const int&f,const int&t) {
+   nx[++cnt] = h[f]; h[f] = cnt; to[cnt] = t;
+   nx[++cnt] = h[t]; h[t] = cnt; to[cnt] = f;
+>>>>>>> adc7d9c9a6b5f68d6cc490898ea0039385753fbc
 }
  
 int n,m,e,ans;
 
+<<<<<<< HEAD
 inline bool bfs() {
     list<int> e;
     e.push_back(s);
@@ -67,15 +81,33 @@ inline void dinic() {
         mx_f += dfs(s,inf);
     }
     printf("%d",mx_f);
+=======
+bool dfs(int x) {
+    for(int i = h[x]; i; i = nx[i]) if(!vis[to[i]]) {
+        vis[to[i]] = 1;
+        if(!bel[to[i]] || dfs(bel[to[i]])) {
+            bel[to[i]] = x;
+            return 1;
+        }
+    }
+    return 0;
+>>>>>>> adc7d9c9a6b5f68d6cc490898ea0039385753fbc
 }
 
 int main() {
     // freopen("1.in","r",stdin);
     int u,v;
+<<<<<<< HEAD
     memset(h,-1,sizeof h);
     scanf("%d%d%d",&n,&m,&e);
     for(int i = 1; i <= e; i++) {scanf("%d%d",&u,&v);if(v <= m && u <= n && u >= 1 && v >= 1) add(u,v+bs,1);}
     for(int i = 1; i <= n; i++) add(s,i,1);
     for(int i = 1; i <= m; i++) add(t,i+bs,1);
     dinic();
+=======
+    scanf("%d%d%d",&n,&m,&e);
+    for(int i = 1; i <= e; i++) {scanf("%d%d",&u,&v);if(v <= m && u <= n && u >= 1 && v >= 1) add(u,v+bs);}
+    for(int i = 1; i <= n; i++) memset(vis,0,sizeof vis),ans += dfs(i); 
+    printf("%d",ans);       
+>>>>>>> adc7d9c9a6b5f68d6cc490898ea0039385753fbc
 }
