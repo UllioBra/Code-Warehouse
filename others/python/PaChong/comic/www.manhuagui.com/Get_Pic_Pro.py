@@ -17,6 +17,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 # sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='gbk')
 
+bs_p = 'C:/test/muti/'
+t_url = 'https://www.manhuagui.com/comic/17023/'
 
 def headers():
     dic = {'Referer': 'https://www.manhuagui.com/comic/17023/176171.html', 'DNT': '1',
@@ -114,7 +116,7 @@ def Get_Img(url, pa_1):
     Get_Img_D(num, pa_2, url)
 
 
-def Get_Comic(url):
+def Get_Comic(url = t_url):
     bf = BeautifulSoup(requests.get(url).text, 'html.parser')
     title = bf.find('h1').text
     cls_t = bf.find_all('h4')
@@ -132,11 +134,3 @@ def Get_Comic(url):
             for k in j.find_all('li'):
                 u = 'https://www.manhuagui.com/'+k.a['href']
                 Get_Img(u, pa_1)
-
-
-bs_p = 'C:/test/'
-url = 'https://www.manhuagui.com/comic/17023/'
-
-if __name__ == "__main__":
-    Get_Comic(url)
-    pass

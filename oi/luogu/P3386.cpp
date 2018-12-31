@@ -12,7 +12,6 @@
  
 using namespace std;
 
-<<<<<<< HEAD
 const int s = 2001,t = 2002;
 const int bs = 1000;
 const int mx_n = 2010;
@@ -24,7 +23,6 @@ int dis[mx_n];
 inline void add(const int&f,const int&t,const int&co) {
    nx[cnt] = h[f]; h[f] = cnt; to[cnt] = t; w[cnt++] = co;
    nx[cnt] = h[t]; h[t] = cnt; to[cnt] = f; w[cnt++] = co;
-=======
 const int bs = 1000;
 const int mx_n = 20000;
 const int mx_e = 2000000;
@@ -35,12 +33,10 @@ int bel[20020];
 inline void add(const int&f,const int&t) {
    nx[++cnt] = h[f]; h[f] = cnt; to[cnt] = t;
    nx[++cnt] = h[t]; h[t] = cnt; to[cnt] = f;
->>>>>>> adc7d9c9a6b5f68d6cc490898ea0039385753fbc
 }
  
 int n,m,e,ans;
 
-<<<<<<< HEAD
 inline bool bfs() {
     list<int> e;
     e.push_back(s);
@@ -81,7 +77,6 @@ inline void dinic() {
         mx_f += dfs(s,inf);
     }
     printf("%d",mx_f);
-=======
 bool dfs(int x) {
     for(int i = h[x]; i; i = nx[i]) if(!vis[to[i]]) {
         vis[to[i]] = 1;
@@ -91,7 +86,6 @@ bool dfs(int x) {
         }
     }
     return 0;
->>>>>>> adc7d9c9a6b5f68d6cc490898ea0039385753fbc
 }
 
 int main() {
