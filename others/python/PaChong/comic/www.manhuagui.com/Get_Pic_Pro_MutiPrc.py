@@ -55,7 +55,10 @@ def Download_File(list_, path, cnt, res):
 def driver_open():
     options = webdriver.ChromeOptions()
     # options.set_headless()
-    options.add_extension('./adb.crx')
+    options.add_argument('--disable-gpu')
+    options.add_extension('./adb1.crx')
+    options.add_argument("--window-position=0,0")
+    # options.add_argument("--window-size=1,1")
     options.add_argument('lang=zh_CN.UTF-8')
     options.add_argument(
         "user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'")
@@ -80,6 +83,7 @@ def Get_Img_D(num, pa_2, url):
 
     browser = driver_open()
     browser.get(url + '#p=' + str(cnt))
+    browser.refresh()
 
     while cnt < num:
         cnt = cnt + 1
@@ -119,13 +123,19 @@ def Get_Img(url, pa_1):
     Get_Img_D(num, pa_2, url)
 
 
+
+# 根据获取的目录url download comic
 def Get_Comic(url):
+    # url : 待获取comic的目录页
     bf = BeautifulSoup(requests.get(url).text, 'html.parser')
     title = bf.find('h1').text
+    # title : comic name
     cls_t = bf.find_all('h4')
+    # cls_t : 创建单行本等目录所需
     body = bf.find_all('div', class_='chapter-list cf mt10')
-
+    # body : 获取整体目录列表
     path = bs_p + title + '/'
+    # path : 存储目录
     MKdir(path)
     global p_path
     p_path = path
@@ -134,18 +144,21 @@ def Get_Comic(url):
         A.writelines('\n' + "Process starts on %s " %Get_Time() + '\n')
 
     cnt = 0
+    p = Pool(4)
     for i in body:
         key = cls_t[cnt].text
+        # key : dxb,dh,fw
         pa_1 = path + key + '/'
+        # pa_1 : 针对key值的存储目录
         MKdir(pa_1)
         cnt = cnt + 1
-        p = Pool(4)
         for j in i.find_all('ul'):
             for k in j.find_all('li'):
                 u = 'https://www.manhuagui.com/'+k.a['href']
+                # u : 单篇首页
                 p.apply_async(Get_Img, (u, pa_1)) 
-        p.close()
-        p.join()
+    p.close()
+    p.join()
 
 
 bs_p = 'F:/AutoComic/'
